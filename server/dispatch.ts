@@ -18,12 +18,14 @@ interface CallInfo {
 
 export function process(req: Express.Request, res: Express.Response) {
 
-    var info: CallInfo = req.body;
+    res.send('hello world!');
 
-    client[info.call](info.url, info.args).then(data => {
-        res.send("Hello World");
-    }).catch(err =>{
-        res.send(err); // send error code
-    });
+    //var info: CallInfo = req.body;
+
+    //client[info.call](info.url, info.args).then(data => {
+    //    res.send("Hello World");
+    //}).catch(err =>{
+    //    res.send(err); // send error code
+    //});
     
 }
