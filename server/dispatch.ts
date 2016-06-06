@@ -8,18 +8,22 @@ import Express = require('express');
 var Schema = require('schema-client');
 var client = new Schema.Client('afriknetmarket', 'WRvloJ7OlLsNCAjPFfp1wJcRwyNU5pQ2');
 
+
+interface CallInfo {
+    call: string,
+    url: string,
+    args: any
+}
+
+
 export function process(req: Express.Request, res: Express.Response) {
 
-    client.get('/products', { active: true }).then(data => {
+    var info: CallInfo = req.body;
 
-        res.send("hello world!");
-
-    }).catch(err=> {
-
-        res.send(err);
-
+    client[info.call](info.url, info.args).then(data => {
+        res.send(data);
+    }).catch(err =>{
+        res.send(err); // send error code
     });
-
-
-
+    
 }
