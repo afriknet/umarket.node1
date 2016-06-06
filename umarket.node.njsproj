@@ -136,10 +136,37 @@
     <Folder Include="tasks\" />
     <Folder Include="tasks\config\" />
     <Folder Include="tasks\register\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\breeze\" />
+    <Folder Include="typings\express\" />
+    <Folder Include="typings\formidable\" />
+    <Folder Include="typings\fs-extra\" />
+    <Folder Include="typings\lodash\" />
+    <Folder Include="typings\mime\" />
+    <Folder Include="typings\moment\" />
+    <Folder Include="typings\multer\" />
+    <Folder Include="typings\node\" />
+    <Folder Include="typings\q\" />
+    <Folder Include="typings\serve-static\" />
+    <Folder Include="typings\winston\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="server\dispatch.ts" />
+    <TypeScriptCompile Include="typings\breeze\breeze.d.ts" />
+    <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\formidable\formidable.d.ts" />
+    <TypeScriptCompile Include="typings\fs-extra\fs-extra.d.ts" />
+    <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="typings\mime\mime.d.ts" />
+    <TypeScriptCompile Include="typings\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include="typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include="typings\multer\multer.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\q\Q.d.ts" />
+    <TypeScriptCompile Include="typings\serve-static\serve-static.d.ts" />
+    <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\winston\winston.d.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

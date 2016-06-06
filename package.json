@@ -21,7 +21,10 @@
     "include-all": "~0.1.6",
     "rc": "1.0.1",
     "sails": "~0.12.1",
-    "sails-disk": "~0.10.9"
+    "sails-disk": "~0.10.9",
+    "root-path": "^0.2.0",
+    "q": "^1.4.1",
+    "schema-client": "^2.2.1"
   },
   "scripts": {
     "debug": "node debug app.js",
