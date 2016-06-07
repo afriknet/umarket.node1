@@ -10,32 +10,40 @@ var client = new Schema.Client('afriknetmarket', 'WRvloJ7OlLsNCAjPFfp1wJcRwyNU5p
 
 
 interface CallInfo {
-    call: string,
-    url: string,
-    args: any
+    fn: string,    
+    params: any[]
 }
 
 
 export function process(req: Express.Request, res: Express.Response) {
-    
 
     var info: CallInfo = req.body;
 
-    client[info.call](info.url, info.args, (err, data) => {
+    var params: any[] = info.params;
 
-        if (err) {
-            res.status(500).send(err);
-        } else {
+    params.push((err, data) => {
+        process_response(err, data, res);
+    });
 
-            if (!data) {
-                data = {}
-            }
+    client[info.fn].apply(client, params);
+    
+}
 
-            res.send({
-                response: data
-            });
+
+
+function process_response(err: any, data: any, res: Express.Response) {
+
+    if (err) {
+        res.status(500).send(err);
+    } else {
+
+        if (!data) {
+            data = {}
         }
 
-    });
-    
+        res.send({
+            response: data
+        });
+    }
+
 }
