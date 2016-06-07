@@ -20,14 +20,13 @@ export function process(req: Express.Request, res: Express.Response) {
         
     var info: CallInfo = req.body;
 
-    info = {
-        fn: 'get',
-        params: ['/products', { where: {active:true}}]
-    }
+    //info = {
+    //    fn: 'get',
+    //    params: ['/products', { where: {active:true}}]
+    //}
 
     var params: any[] = info.params;
-
-    
+        
     params.push((err, data) => {
         process_response(err, data, res);
     });

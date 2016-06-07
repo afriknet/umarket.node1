@@ -3,10 +3,10 @@ var Schema = require('schema-client');
 var client = new Schema.Client('afriknetmarket', 'WRvloJ7OlLsNCAjPFfp1wJcRwyNU5pQ2');
 function process(req, res) {
     var info = req.body;
-    info = {
-        fn: 'get',
-        params: ['/products', { where: { active: true } }]
-    };
+    //info = {
+    //    fn: 'get',
+    //    params: ['/products', { where: {active:true}}]
+    //}
     var params = info.params;
     params.push(function (err, data) {
         process_response(err, data, res);
