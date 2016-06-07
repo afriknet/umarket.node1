@@ -15,12 +15,19 @@ interface CallInfo {
 }
 
 
-export function process(req: Express.Request, res: Express.Response) {
 
+export function process(req: Express.Request, res: Express.Response) {
+        
     var info: CallInfo = req.body;
+
+    info = {
+        fn: 'get',
+        params: ['/products', { where: {active:true}}]
+    }
 
     var params: any[] = info.params;
 
+    
     params.push((err, data) => {
         process_response(err, data, res);
     });
@@ -34,7 +41,9 @@ export function process(req: Express.Request, res: Express.Response) {
 function process_response(err: any, data: any, res: Express.Response) {
 
     if (err) {
+
         res.status(500).send(err);
+
     } else {
 
         if (!data) {
