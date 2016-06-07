@@ -18,7 +18,9 @@ interface CallInfo {
 
 export function process(req: Express.Request, res: Express.Response) {
 
-    res.send('hello world');
+    res.send({
+        response: 'hello world'
+    });
 
     //var info: CallInfo = req.body;
 
