@@ -65,6 +65,7 @@
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
+    <Compile Include="server\dispatch.js" />
     <Compile Include="tasks\config\clean.js" />
     <Compile Include="tasks\config\coffee.js" />
     <Compile Include="tasks\config\concat.js" />
@@ -105,6 +106,7 @@
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
+    <Content Include="server\dispatch.js.map" />
     <Content Include="tasks\README.md" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
