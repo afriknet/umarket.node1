@@ -17,21 +17,25 @@ interface CallInfo {
 
 
 export function process(req: Express.Request, res: Express.Response) {
+    
 
-    res.send({
-        response: 'hello world'
+    var info: CallInfo = req.body;
+
+    client[info.call](info.url, info.args, (err, data) => {
+
+        if (err) {
+            res.status(500).send(err);
+        } else {
+
+            if (!data) {
+                data = {}
+            }
+
+            res.send({
+                response: data
+            });
+        }
+
     });
-
-    //var info: CallInfo = req.body;
-
-    //client[info.call](info.url, info.args, (err, data) => {
-
-    //    if (err) {
-    //        res.status(500).send(err);
-    //    } else {
-    //        res.send(data);
-    //    }
-
-    //});
     
 }
